@@ -5,6 +5,8 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     @articles = Article.all
+    @meta_title = meta_title 'Ruby on Rails SEO Done Right'
+    @meta_description = 'Guía completa de SEO para aplicaciones de Ruby on Rails' 
   end
 
   # GET /articles/1
