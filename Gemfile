@@ -46,3 +46,4 @@ group :development do
 end
 
 gem 'friendly_id'
+gem 'sitemap_generator'
