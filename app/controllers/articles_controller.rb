@@ -6,12 +6,19 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.all
     @meta_title = meta_title 'Ruby on Rails SEO Done Right'
-    @meta_description = 'Guía completa de SEO para aplicaciones de Ruby on Rails' 
+    @meta_description = 'Comprehensive SEO Guide for Ruby on Rails Applications'
   end
 
   # GET /articles/1
   # GET /articles/1.json
   def show
+    @meta_title = meta_title @article.title
+    @og_properties = {
+      title: @meta_title,
+      type:  'website',
+      image: view_context.image_url('image.png'),  # this file should exist in /app/assets/images/logo.png
+      url: @canonical_url
+    }
   end
 
   # GET /articles/new
